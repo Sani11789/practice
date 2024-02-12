@@ -49,7 +49,7 @@ const ManageItems = () => {
       price: "",
       categoryID: "",
       files: [] as unknown as File[],
-      banner: "" as unknown as File,
+      banner: "" as unknown as number,
     },
   });
 
@@ -91,10 +91,11 @@ const ManageItems = () => {
     formData.append("description", data.description || "");
     formData.append("price", data.price.toString() || "");
     formData.append("categoryID", data.categoryID || "");
+    formData.append("banner", imageIndex.toString()||"0");
     file.forEach((file, index) => {
       formData.append("files", file);
     });
-    formData.append("banner", file[imageIndex]);
+  
 
     await CreateItemsApi(formData);
     const response = await GetAllItemsApi(searchQuery);

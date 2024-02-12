@@ -22,7 +22,7 @@ const Blogs = () => {
             <h2>Blogs</h2>
             <div className='blog-container'>
                 {/* {blogs && blogs.length > 0 ? ( */}
-                {blogs.map((blog) => {
+                {blogs?.map((blog) => {
                     return (
                         <div key={blog._id} className='blog-card'>
                             <img src={`http://localhost:3000/uploads/${blog.banner}`}

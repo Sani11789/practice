@@ -19,7 +19,7 @@ class ItemController {
 
       const files = req.files as Express.Multer.File[];
 
-      const { title, description, price, categoryID } = req.body;
+      const { title, description, price, categoryID ,banner } = req.body;
       console.log(files);
 
       if (!title || !description || !price || !categoryID) {
@@ -42,14 +42,12 @@ class ItemController {
         file.path.split(`\\`).pop()
       ) as string[];
 
-      let index=1
-
       const item = new itemModel({
         title,
         description,
         price,
         categoryID,
-        banner: pathParts[index],
+        banner: pathParts[banner],
         files: pathParts,
       });
 

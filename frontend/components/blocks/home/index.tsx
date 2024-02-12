@@ -71,7 +71,7 @@ const HomePage = () => {
         setCategoryID(categoryId);
     };
 
-    console.log(categories.slice(0, 3).length)
+    // console.log(categories.slice(0, 3).length)
 
     return (
         <div className="container">
@@ -111,7 +111,7 @@ const HomePage = () => {
                                 drag: 'free',
                             }}
                         >
-                            {categories.map((category) => (
+                            {categories?.map((category) => (
                                 <SplideSlide key={category._id}>
                                     <div>
                                         <p

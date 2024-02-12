@@ -150,7 +150,7 @@ interface CreateItemForm {
   price: string;
   categoryID: string;
   files: File[] | null;
-  banner: File | null;
+  banner: number | null;
 }
 
 interface CreateUserForm {
